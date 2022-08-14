@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import Card from "E:/reactprojects/travel/src/Card.jsx"
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import data from "./data.js"
 
 function App() {
+  const content = data.map((items) => {
+    return (
+      <Card
+       img={items.cardimage}
+       caption={items.caption} 
+      />
+    )
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='content'>
+      {content}
     </div>
   );
+
 }
 
 export default App;
